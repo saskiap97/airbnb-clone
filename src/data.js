@@ -37,5 +37,18 @@ export default [
         },
         location: "Norway",
         openSpots: 3,
-    }
+    },
+    {
+        id: 4,
+        title: "Snowboarding with Alec",
+        description: "I will share with you what I call \"Positively Impactful Moments of Disappointment.\" Throughout my career, many of my highest moments only came after setbacks and losses. But learning from those difficult moments is what gave me the ability to rise above them and reach my goals.",
+        price: 193,
+        coverImg: "https://cdn-blob.austria.info/cms-uploads-prod/default/0001/01/thumb_666_default_teaser.jpeg?cachebuster=1642776814",
+        stats: {
+            rating: 5.0,
+            reviewCount: 10
+        },
+        location: "Austria",
+        openSpots: 0,
+    },
 ]
