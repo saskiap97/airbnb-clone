@@ -1,17 +1,31 @@
-import goat from "../images/goat.jpeg"
+import { useState } from "react"
+import allData from "../data"
 
 export default function Card() {
-    return (
-        <div className="card">
-            <img src={goat} alt="goat" className="card--img" />
 
-            <div className="card--stats">
-                <span>★ 5.0</span>
-                <span className="grey">(6)</span>
-                <span className="grey">USA</span>
-            </div>
-            <p>Pet a goat at the farm</p>
-            <p><span className="bold">From $136 </span>/ per person</p>
+    const [data, setData] = useState(allData)
+    console.log(data)
+    return (
+        <div className="cards-list" >
+
+
+            {data.map((experience) => {
+                return (
+                    <div className="card" key={experience.id}>
+                        {experience.openSpots > 1 && <div className="card--badge">SOLD OUT</div>}
+                        <img src={experience.coverImg} alt="cover" className="card--img" />
+                        <div className="card--stats">
+                            <span>★{experience.stats.rating}</span>
+                            <span className="grey">({experience.stats.reviewCount}) </span>
+                            <span className="grey">{experience.location}</span>
+                        </div>
+                        <p className="card--title">{experience.title}</p>
+                        <p><span className="bold card--price">From ${experience.price} </span>/ per person</p>
+                    </div>
+                )
+            })}
+
+
         </div>
     )
 }
